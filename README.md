@@ -1,19 +1,19 @@
-# 📄 DigiHaul Data Engineer Take-Home Assignment - Aliff Danial
+# DigiHaul Data Engineer Take-Home Assignment - Aliff Danial
 
-## 📝 Overview
+## Overview
 
 This project extracts hourly weather data for 10 coordinates using the OpenWeather API, stores the data in Azure Blob Storage in Parquet format, and is scheduled via Apache Airflow.
 
 ---
 
-## 📌 Requirements
+## Requirements
 
 - Docker Installed
 - Microsoft Azure Account
 
 ---
 
-## 🚀 Airflow Setup With Docker
+## Airflow Setup With Docker
 
 1. Download docker compose file using wget from official airflow website. In this project I am using Airflow `2.10.4`
     
@@ -116,7 +116,7 @@ This project extracts hourly weather data for 10 coordinates using the OpenWeath
 
 ---
 
-## 🔐 Secrets & Configuration
+## Secrets & Configuration
 
 Requirements:
 
@@ -158,7 +158,7 @@ az keyvault create --name airflow-connection-kv \
         --enable-rbac-authorization true
 ```
 
-📝 Use `--enable-rbac-authorization true` to allow RBAC-based access.
+Use `--enable-rbac-authorization true` to allow RBAC-based access.
 
 ---
 
@@ -198,7 +198,7 @@ az keyvault secret set --vault-name airflow-connection-kv \
 
 ---
 
-## ⏰ Dag Setup
+## Dag Setup
 
 1. Make sure Airflow is up and running.
 2. Place `extract_weather_data_and_upload_to_blob.py` in your Airflow dags folder.
@@ -206,7 +206,7 @@ az keyvault secret set --vault-name airflow-connection-kv \
 
 ---
 
-### 🖼️ Screenshots
+### Screenshots
 
 Parquet Files in Blob Storage
 
@@ -225,7 +225,7 @@ Example of succesful dag runs
 Sample data
 ![image.png](public/image%203.png)
 
-### 🔧Troubleshoot
+### Troubleshoot
 
 1. Sometime the dag is not showing in the Web UI and the import error is not showing as well. To check what is the error, we can run this command. This command will check if the dags are in the `dagbag` and check if there is any error with any of the dag.
     
